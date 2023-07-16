@@ -15,8 +15,5 @@ def y_wallpapers(request) :
 def collection(request) :
     return render(request,'walls/collection.html')
 
-def index(request) :
-    return render(request,'walls/index.html')
-
 def games(request) :
     return render(request,'walls/games.html')
