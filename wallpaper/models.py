@@ -5,20 +5,18 @@ class Wallpaper(models.Model):
     image = models.ImageField(upload_to='image/')
     Wallpaper=models.ImageField(upload_to='walls/')
     created_time = models.DateTimeField(auto_now=True)
-
     
     CATEGORY = [
         ('GAMES' , 'Games'),
         ('NATURE' , 'Nature'),
         ('ABSTRACT' , 'Abstract'),
         ('CARS' , 'Cars'),
-        ('CITY' , 'City') ,
-        ('MOVIES' , 'Movies'),
+        ('ANIMALS' , 'Animals') ,
+        ('ARCHITECTURE' , 'Architecture'),
         ('SPACE' , 'Space'), 
         ('RANDOM' , 'Random'),
     ]
-
-    category = models.CharField(max_length=10, choices=CATEGORY , default='Random')
+    category = models.CharField(max_length=15, choices=CATEGORY , default='Random')
 
     def __str__(self) :
         return self.title
@@ -26,6 +24,7 @@ class Wallpaper(models.Model):
 
 
 class Contact(models.Model) :
+
     name=models.CharField(max_length=100)
     email=models.EmailField(max_length=254)
     message=models.TextField()
