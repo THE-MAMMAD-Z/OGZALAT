@@ -1,0 +1,84 @@
+        
+            .grid-container {
+        /* position: relative; */
+        background-color: rgb(14, 7, 72);
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        /* grid-template-columns: auto auto auto; */
+        padding: 10px;
+        row-gap: 50px;
+        }
+
+        .grid-item {
+        position: relative;
+        border: 30px;
+        padding: 50px;
+        /* text-align: center; */
+        display: flex; /* Add this to stack the content vertically */
+        flex-direction: column; /* Add this to stack the content vertically */
+        text-align: center;
+        }
+
+        .image {
+        position: relative;
+        }
+
+        #lok {
+        color: aliceblue;
+        /* top: 150px; Remove this line, it's not needed */
+        left: 200px;
+        text-align: center;
+        /* top: 1000px; */
+        }
+
+        .image1 {
+        position: relative; 
+        z-index: 1;
+        max-width: 130%;
+        height: 80%;
+        left: 10px;
+        top: 50px;
+        }
+
+        .image2 {
+        position: relative;
+        top: -15px;
+        left: 460px; 
+        z-index: 2;
+        max-width: 10%;
+        height: auto;
+        }
+
+         .pagination {
+            display: flexbox;
+            background-color:aqua;
+            text-align: center;
+            
+          }
+          
+          .pagination a {
+             color: rgb(26, 140, 155); 
+            /* float: left; */
+            padding: 8px 16px;
+            text-decoration: none;
+            
+          }
+          
+          .pagination a.active {
+            background-color: #4c54af;
+            color: rgb(228, 223, 226);
+            
+          }
+
+          /* #gor{
+            text-align: center;
+            color: aqua;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+          }  */
+          
+          .pagination a:hover:not(.active) {
+            background-color: #e50d0d;
+            color: aliceblue;
+          } 

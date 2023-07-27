@@ -24,60 +24,7 @@
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/">
 
-
-        <style>
-        
-            .grid-container {
-        /* position: relative; */
-        background-color: rgb(14, 7, 72);
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        /* grid-template-columns: auto auto auto; */
-        padding: 10px;
-        row-gap: 50px;
-        }
-
-        .grid-item {
-        position: relative;
-        border: 30px;
-        padding: 50px;
-        /* text-align: center; */
-        display: flex; /* Add this to stack the content vertically */
-        flex-direction: column; /* Add this to stack the content vertically */
-        text-align: center;
-        }
-
-        .image {
-        position: relative;
-        }
-
-        #lok {
-        color: aliceblue;
-        /* top: 150px; Remove this line, it's not needed */
-        left: 200px;
-        text-align: center;
-        /* top: 1000px; */
-        }
-
-        .image1 {
-        position: relative; 
-        z-index: 1;
-        max-width: 130%;
-        height: 80%;
-        left: 10px;
-        top: 50px;
-        }
-
-        .image2 {
-        position: relative;
-        top: -15px;
-        left: 460px; 
-        z-index: 2;
-        max-width: 10%;
-        height: auto;
-        }
-
-        </style>
+  <link rel="stylesheet" href="{% static 'style.css' %} ">
 
 
 
@@ -140,26 +87,46 @@
         </nav>
       </div></header>
           
-<div id="dofr">
-    <div class="grid-container">
-
-                {% if photolist %}
-                    {% for concert in photolist %} 
-                      {% if concert.category == 'ANIMALS'%}
-                        <div class="grid-item">
-                          <img class="image image1"  src="{{ concert.image.url }}" alt="">
-                          <img class="image image2" src="{% static 'images/22.png' %}" alt="">
-                          <h2 id="lok">{{ concert }}</h2>
-                        </div> 
-                      {%endif%}
-                    {%endfor%} 
-                {% endif %}
-
-
-        </div>
-      </div>
-    </section> 
+      <div id="dofr">
+        <div class="grid-container">
     
+      {% if photolist %}
+          {% for item in page_obj %} 
+              <div class="grid-item">
+                <img class="image image1"  src="{{ item.image.url }}" alt="">
+                <img class="image image2" src="{% static 'images/22.png' %}" alt="">
+                <h2 id="lok">{{ item.title }}</h2>
+              </div> 
+          {%endfor%} 
+      {% endif %}
+    
+    
+    
+    
+    
+            </div>
+          </div>
+    
+          <div class="pagination">
+            {% if page_obj.has_previous %}
+            <a  href="?page={{ page_obj.previous_page_number }}">&laquo;</a>    
+            {% endif %}
+        
+            {% for i in page_obj.paginator.page_range %}
+                {% if page_obj.number == i %}
+                    <a  href="?page={{ i }}" class="active">{{ i }}</a>
+                {% else %}
+                    <a  href="?page={{ i }}">{{ i }}</a>
+                {% endif %}
+            {% endfor %}      
+            
+            {% if page_obj.has_next %}
+            <a  href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+            {% endif %}
+        
+        </div>
+    
+        
     
     <footer class="u-align-center u-clearfix u-custom-color-1 u-footer u-footer" id="sec-8606"><img class="u-expanded-width u-image u-image-default u-image-1" src="{% static 'images/wallpapersden.com_red-forest_1920x1080.jpg' %}" alt="" data-image-width="1920" data-image-height="1080"><p class="u-small-text u-text u-text-palette-3-base u-text-variant u-text-1">THIS IS A TEST PROJECT AND IS NOT SO SERIOUS</p></footer>
 
