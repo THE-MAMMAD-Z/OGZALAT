@@ -43,10 +43,14 @@
         .image2 {
         position: relative;
         top: -15px;
-        left: 460px; 
+        left: 230px; 
         z-index: 2;
         max-width: 10%;
         height: auto;
+        }
+
+        a{
+          left: 200px;
         }
 
          .pagination {

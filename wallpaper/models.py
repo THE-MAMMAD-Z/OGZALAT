@@ -3,7 +3,7 @@ from django.db import models
 class Wallpaper(models.Model):
     title = models.CharField(max_length=225)
     image = models.ImageField(upload_to='image/')
-    Wallpaper=models.ImageField(upload_to='walls/')
+    photo=models.ImageField(upload_to='walls/')
     created_time = models.DateTimeField(auto_now=True)
     
     CATEGORY = [
