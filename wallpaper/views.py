@@ -1,16 +1,27 @@
 from django.shortcuts import render
-from django.http import HttpResponse 
+from django.http import HttpResponse ,HttpResponseRedirect
 from  .models import *
 from django.core.paginator import Paginator
 from django.http import FileResponse
+from .forms import ContactForm
 from django.shortcuts import get_object_or_404
 # Create your views here.
 
 def kome(request) :
     return render(request,'walls/Home.html')
 
-def contact(request) :
-    return render(request,'walls/contact.html')
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            
+
+            form.save()
+            return render(request,'walls/success.html')  # Replace 'contact_success' with the URL name for the success page
+    else:
+        form = ContactForm()
+
+    return render(request, 'walls/contact.html', {'form': form})
 
 def y_wallpapers(request) :
     return render(request,'walls/your-wallpapers.html')
@@ -110,6 +121,7 @@ def space(request,):
     return render(request ,'walls/category/caategory.html',context)
 
 def games(request,):
+    
     wall = Wallpaper.objects.filter(category="GAMES")
     paginator = Paginator(wall, 6)  # Display 10 items per page
     esm="GAMES"
@@ -133,4 +145,8 @@ def download_file(request, file_id):
     return response
 
 
-    
+# def test(request,):
+#     if(2==2):
+#         return render(request ,'walls/category/caategory.html')
+#     else :
+#         return render(request ,'walls/category/caategory.html')
