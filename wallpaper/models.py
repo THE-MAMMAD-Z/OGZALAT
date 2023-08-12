@@ -36,3 +36,13 @@ class Contact(models.Model) :
     
 
 
+
+class LiveWalls(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="image/")
+    created_time = models.DateTimeField(auto_now=True)
+    clip = models.FileField(upload_to="clips/")
+    live_wall = models.FileField(upload_to="videos/")
+
+    def __str__(self):
+        return self.title

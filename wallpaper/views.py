@@ -23,8 +23,7 @@ def contact(request):
 
     return render(request, 'walls/contact.html', {'form': form})
 
-def y_wallpapers(request) :
-    return render(request,'walls/your-wallpapers.html')
+
 
 def collection(request) :
     return render(request,'walls/collection.html')
@@ -150,3 +149,25 @@ def download_file(request, file_id):
 #         return render(request ,'walls/category/caategory.html')
 #     else :
 #         return render(request ,'walls/category/caategory.html')
+
+
+def live_wallpaper(request):
+    walls = LiveWalls.objects.all()
+    paginator = Paginator(walls, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {
+        "photolist" : walls,
+        "photocount" : walls.count(),
+        'page_obj': page_obj
+    }
+    return render(request ,'walls/live_wallpapers.html',context)
+
+
+def d_live(request,num):
+    live = LiveWalls.objects.get(id=num)
+    context={
+        "live":live
+    }
+
+    return render(request,"walls/downloadlive.html",context)
