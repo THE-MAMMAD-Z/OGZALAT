@@ -30,62 +30,66 @@
 
 </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-border-14 u-border-black u-clearfix u-header u-image u-header" id="sec-b83f" data-image-width="1920" data-image-height="1080"><div class="u-clearfix u-sheet u-sheet-1">
-        <h3 class="u-text u-text-body-alt-color u-text-1">
-          <span style="font-size: 48px;">OGZALAT</span>
-        </h3>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-active-color u-custom-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+    <h3 class="u-text u-text-body-alt-color u-text-1">
+      <span style="font-size: 48px;">OGZALAT</span>
+    </h3>
+    <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+      <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+        <a class="u-button-style u-custom-active-color u-custom-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+          <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+          <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
 </g></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-black u-black u-button-style u-hover-palette-1-base u-nav-link u-text-active-white u-text-hover-white" href="{% url 'wall:home' %}" style="padding: 10px 28px;">Home</a>
-</li><li class="u-nav-item"><a class="u-active-black u-black u-button-style u-hover-palette-1-base u-nav-link u-text-active-white u-text-hover-white" href="{% url 'wall:home' %}" style="padding: 10px 28px;">Category</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:games' %}">games</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:nature' %}">nature</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:abstract' %}">abstract</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:animals' %}">animals</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:space' %}">space</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:cars' %}">cars</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:architecture' %}">architecture</a>
-
+        </a>
+      </div>
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-black u-black u-button-style u-hover-palette-1-base u-nav-link u-text-active-white u-text-hover-white" href="{% url 'wall:home' %}" style="padding: 10px 28px;">Home</a>
+</li><li class="u-nav-item">
+<a class="u-active-black u-black u-button-style u-hover-palette-1-base u-nav-link u-text-active-white u-text-hover-white" href="{% url 'wall:home' %}" style="padding: 10px 28px;">Category</a>
+<div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item">
+{% comment %} <a class="u-button-style u-nav-link u-white" target="_blank">Category</a> {% endcomment %}
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:category' name='game' %}">games</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:category' name='nature' %}">nature</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:category' name='abstract' %}">abstract</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:category' name='animals' %}">animals</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:category' name='space' %}">space</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:category' name='cars' %}">cars</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'wall:category' name='architecture' %}">architecture</a>
 
 </li></ul>
 </div>
 </li><li class="u-nav-item"><a class="u-active-black u-black u-button-style u-hover-palette-1-base u-nav-link u-text-active-white u-text-hover-white" href="{% url 'wall:collection' %}" style="padding: 10px 28px;">Collection</a>
+{% comment %} </li><li class="u-nav-item"><a class="u-active-black u-black u-button-style u-hover-palette-1-base u-nav-link u-text-active-white u-text-hover-white" href="{% url 'wall:your_wallpapers' %}" style="padding: 10px 28px;">Your wallpapers</a> {% endcomment %}
 </li><li class="u-nav-item"><a class="u-active-black u-black u-button-style u-hover-palette-1-base u-nav-link u-text-active-white u-text-hover-white" href="{% url 'wall:contact' %}" style="padding: 10px 28px;">Contact us</a>
 </li><li class="u-nav-item"><a class="u-active-black u-black u-button-style u-hover-palette-1-base u-nav-link u-text-active-white u-text-hover-white" href="{% url 'wall:live' %}" style="padding: 10px 28px;">Live Wallpapers</a>
 </li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:home' %}">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:home' %}">Category</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:games' %}">games</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:nature' %}">nature</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:abstract' %}">abstract</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:animals' %}">animals</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:space' %}">space</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:cars' %}">cars</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:architecture' %}">architecture</a>
+      </div>
+      <div class="u-custom-menu u-nav-container-collapse">
+        <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+          <div class="u-inner-container-layout u-sidenav-overflow">
+            <div class="u-menu-close"></div>
+            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:home' %}"></a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link" target="_blank"></a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:category' name='game' %}">games</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:category' name='nature' %}">nature</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:category' name='abstract' %}">abstract</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:category' name='animals' %}">animals</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:category' name='space' %}">space</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:category' name='cars' %}">cars</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:category' name='architecture' %}">architecture</a>
 
 </li></ul>
 </div>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:collection' %}">Collection</a>
+{% comment %} </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:your_wallpapers' %}">Your wallpapers</a> {% endcomment %}
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'wall:contact' %}">Contact us</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link">Live Wallpapers</a>
 </li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
-        </nav>
-      </div></header>
+        </div>
+        <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+      </div>
+    </nav>
+  </div></header>
           
       <div id="dofr">
         <div class="grid-container">
@@ -93,12 +97,12 @@
       {% if photolist %}
           {% for item in page_obj %} 
               <div class="grid-item">
-                <img class="image image1"  src="{{ item.image.url }}" alt="">
+                <img style="relative !important ;" class="image image1"  src="{{ item.image.url }}" alt="">
                 <a href="{{ file.photo.url }}">
-                  <img style="left: 230px !important ; " class="image image2"  src="{% static 'images/22.png' %}"  alt="">
+                  <img style="left: 170px !important ; top: -5px !important ; position: relative !important ; " class="image image2"  src="{% static 'images/22.png' %}"  alt="">
                 </a>
                   
-                <h2 id="lok"  >{{ item.title }}</h2>
+                <h2 id="lok"  >{{ item.title|capfirst }}</h2>
               </div> 
           {%endfor%} 
       {% endif %}
